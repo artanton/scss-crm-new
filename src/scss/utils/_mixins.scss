@@ -5,15 +5,13 @@
 @use 'functions' as fn;
 
 @mixin mq($bp: sm, $type: min, $is-retina: false) {
-  @if map-has-key($map: var.$breakpoints, $key: $bp) {
-    $width: map-get(
-      $map: var.$breakpoints,
-      $key: $bp,
-    );
+  @if map.has-key(var.$breakpoints, $bp) {
+    $width: map.get(var.$breakpoints, $bp);
 
     @if $type == max {
       $width: $width - 0.02px;
     }
+
     @media only screen and (#{$type}-width: $width) {
       @if $is-retina {
         @media (min-device-pixel-ratio: 2),
@@ -26,7 +24,7 @@
       }
     }
   } @else {
-    @error;
+    @error "";
   }
 }
 
