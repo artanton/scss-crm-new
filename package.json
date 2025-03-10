@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --base=/scss-cat-crm/",
-     "deploy": "npm run build && gh-pages -d dist",
     "preview": "vite preview",
     "watch": "npx vite build --watch"
   },
